@@ -25,7 +25,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 //serve up static content
 app.use(express.static(__dirname + '/public'));
 
@@ -50,6 +49,11 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/work', (req, res) => {
+  res.render('work.hbs', {
+    title: 'My work'
+  });
+});
 //error route
 app.get('/bad', (req, res) => {
   res.send({
